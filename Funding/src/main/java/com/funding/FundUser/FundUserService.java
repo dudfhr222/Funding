@@ -1,5 +1,7 @@
 package com.funding.FundUser;
 
+import java.util.Optional;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -26,4 +28,10 @@ public class FundUserService {
 		
 		this.fundUserRepository.save(fundUser);
 	}
+	
+	public FundUser findByuserName(String username) {
+		Optional<FundUser> fundUser = fundUserRepository.findByusername(username);
+		return fundUser.get();
+	}
+	
 }

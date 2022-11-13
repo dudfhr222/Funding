@@ -11,8 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.funding.FundUser.FundUser;
 import com.funding.answerAns.AnswerAns;
-import com.funding.answerAns.FundUser;
 import com.funding.fundBoard.FundBoard;
 
 import lombok.Getter;
@@ -37,6 +37,6 @@ public class Answer {
 	@ManyToOne
 	private FundUser fundUserId;
 	
-	@OneToMany(mappedBy = "answerAns", cascade = CascadeType.REMOVE)
+	@OneToMany(mappedBy = "answerId", cascade = CascadeType.REMOVE)
 	private List<AnswerAns> answerAnsList;
 }

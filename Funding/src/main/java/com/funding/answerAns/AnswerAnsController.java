@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.funding.FundUser.FundUser;
+import com.funding.FundUser.FundUserService;
 import com.funding.answer.Answer;
 import com.funding.answer.AnswerService;
 
@@ -21,7 +23,7 @@ public class AnswerAnsController {
 	private final FundUserService fundUserService;
 	
 	//답변 생성
-	@RequestMapping("create/{id}")
+	@RequestMapping("a/create/{id}")
 	public void createAnswerAns(@PathVariable("id")Integer id, @RequestParam("content")String content, Principal principal) {
 		Answer answer = answerService.findById(id);
 		FundUser fundUser = fundUserService.findByuserName(principal.getName());
@@ -29,7 +31,7 @@ public class AnswerAnsController {
 	}
 	
 	//답글 삭제
-	@RequestMapping("delete/{id}")
+	@RequestMapping("a/delete/{id}")
 	public void deleteAnswerAns(@PathVariable("id")Integer id) {
 		AnswerAns answerAns = answerAnsService.findById(id);
 		answerAnsService.deleteAnswerAns(answerAns);

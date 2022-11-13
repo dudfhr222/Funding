@@ -2,6 +2,7 @@ package com.funding.fundBoard;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -51,6 +52,11 @@ public class FundBoardService {
 		
 		this.fundBoardRepository.save(fundBoard);
 		
+	}
+	
+	public FundBoard findById(Integer id) {
+		Optional<FundBoard> fundBoard = fundBoardRepository.findById(id);
+		return fundBoard.get();
 	}
 	
 }
