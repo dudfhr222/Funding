@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.funding.fundBoard.FundBoard;
+
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
@@ -27,11 +29,14 @@ public class AnswerService {
 	}
 	
 	//댓글 만들기
-	public void createAnswer(String content, FundBoard fundBoard) {
+	public void createAnswer(String content, FundBoard fundBoard, FundUser fundUser) {
 		Answer answer = new Answer();
 		answer.setContent(content);
 		answer.setCreateDate(LocalDateTime.now());
 		answer.setFundBoard(fundBoard);
+		answer.setFundUserId(fundUser);
+		
+		answerRepository.save(answer);
 	}
 	
 	

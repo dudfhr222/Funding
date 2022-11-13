@@ -1,19 +1,14 @@
-package com.funding.answer;
+package com.funding.answerAns;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
-import com.funding.answerAns.AnswerAns;
-import com.funding.answerAns.FundUser;
-import com.funding.fundBoard.FundBoard;
+import com.funding.answer.Answer;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -21,8 +16,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Answer {
-	
+public class AnswerAns {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -32,11 +27,8 @@ public class Answer {
 	private LocalDateTime createDate;
 	
 	@ManyToOne
-	private FundBoard fundBoard;
+	private Answer AnswerId;
 	
 	@ManyToOne
 	private FundUser fundUserId;
-	
-	@OneToMany(mappedBy = "answerAns", cascade = CascadeType.REMOVE)
-	private List<AnswerAns> answerAnsList;
 }
