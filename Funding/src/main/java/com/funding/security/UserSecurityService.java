@@ -45,7 +45,7 @@ public class UserSecurityService implements UserDetailsService {
             }else {
                 authorities.add(new SimpleGrantedAuthority(UserRole.USER.getValue()));
             }
-            
+            System.out.println("@@@@@@@@@@@ 아티스트 접속 성공");
             return new User(fundArtist.getUsername(), fundArtist.getPassword(), authorities);
         	
         	
@@ -59,7 +59,7 @@ public class UserSecurityService implements UserDetailsService {
         }else {
             authorities.add(new SimpleGrantedAuthority(UserRole.USER.getValue()));
         }
-        
+        System.out.println("@@@@@@@@@@@ 유저 접속 성공");
         return new User(fundUser.getUsername(), fundUser.getPassword(), authorities);
     }
 }
