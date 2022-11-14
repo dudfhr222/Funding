@@ -1,7 +1,5 @@
 package com.funding.payment;
 
-import com.fasterxml.jackson.databind.JsonNode;
-
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;

@@ -2,14 +2,11 @@ package com.funding.payment;
 
 import org.springframework.stereotype.Service;
 
-import com.fasterxml.jackson.databind.JsonNode;
-
 import lombok.RequiredArgsConstructor;
-import lombok.extern.java.Log;
+
 
 @RequiredArgsConstructor
 @Service
-@Log
 public class PatmentService {
 	private final SaleRepository saleRepository;
 	private final PaymentRepository paymentRepository;
