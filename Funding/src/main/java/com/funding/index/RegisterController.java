@@ -23,7 +23,7 @@ public class RegisterController {
 	@GetMapping("/register")
 	public String registerForm(RegisterValidation vo) {
 		
-		return "userCreateForm";
+		return "user/userCreateForm";
 	}
 	
 	// 회원가입 , 유저정보 저장
