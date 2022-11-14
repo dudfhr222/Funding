@@ -1,4 +1,4 @@
-package com.funding.index;
+package com.funding.user;
 
 import javax.validation.Valid;
 
