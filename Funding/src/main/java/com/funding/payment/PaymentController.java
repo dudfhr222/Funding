@@ -72,17 +72,14 @@ public class PaymentController {
 
         ResponseEntity<JsonNode> responseEntity = restTemplate.postForEntity(
                 "https://api.tosspayments.com/v1/payments/" + paymentKey, request, JsonNode.class);
-        //System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+request+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
         if (responseEntity.getStatusCode() == HttpStatus.OK) {
             JsonNode successNode = responseEntity.getBody();
             log.info(successNode.toString());
             model.addAttribute("orderId", successNode.get("orderId").asText());
-            //successNode.get("virtualAccount").get("customerName").asText();
             String s = successNode.get("orderName").asText();
-            //String ss = successNode.get("virtualAccount").get("customerName").asText();
+            String ss = successNode.get("transactionKey").asText();
             
-            patmentService.savecreditinfo(paymentKey, orderId, amount, s);
-            
+            patmentService.savecreditinfo(paymentKey, orderId, amount, s, ss);
             return "/pay/success";
         } else {
             JsonNode failNode = responseEntity.getBody();

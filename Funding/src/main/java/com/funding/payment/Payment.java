@@ -28,12 +28,6 @@ public class Payment {
 	@Column(name = "id")
 	private Integer id; //기본키
 	
-	@Column(name = "payCode")
-	private String payCode; //결제완료키(환불할때 필요)
-	
-	@Column(name = "transactionKey")
-	private String transactionKey; //거래조회시 필요
-	
 	@Column(name = "payDate")
 	private LocalDateTime payDate; //결제날짜
 	
