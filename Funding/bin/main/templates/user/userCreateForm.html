@@ -43,44 +43,54 @@
     </header>
 
     <section>
-        <form>
+        <form th:action="@{/user/register}" th:object="${vo}" method="post">
             <!-- 아이디 -->
             <div class="int_id">
                 <label for="id">아이디</label>
-                <input type="text" placeholder="아이디 입력">
+                <input type="text" th:field="*{username}" placeholder="아이디 입력">
             </div>
 
             <!-- 비밀번호 -->
             <div class="int_pw">
                 <label for="password">비밀번호</label>
-                <input type="password" placeholder="비밀번호 입력">
+                <input type="password" th:field="*{password1}" placeholder="비밀번호 입력">
             </div>
 
             <!-- 비밀번호 확인 -->
             <div class="int_pw_check">
                 <label for="password_check">비밀번호 확인</label>
-                <input type="password" placeholder="비밀번호 확인">
+                <input type="password" th:field="*{password2}" placeholder="비밀번호 확인">
             </div>
 
             <!-- 닉네임 -->
             <div class="int_nickname">
                 <label for="nickname">닉네임</label>
-                <input type="text" placeholder="닉네임 입력">
+                <input type="text" th:field="*{nickname}" placeholder="닉네임 입력">
             </div>
 
             <!-- 이메일 -->
             <div class="int_email">
                 <label for="email">이메일</label>
-                <input type="text" placeholder="이메일 입력">
+                <input type="text" th:field="*{email}" placeholder="이메일 입력">
             </div>
 
             <!-- 전화번호 -->
             <div class="int_mobile">
                 <label for="mobile">전화번호</label>
-                <input type="text" maxlength="16" placeholder="전화번호 입력">
+                <input type="text" th:field="*{mobile}" maxlength="16" placeholder="전화번호 입력">
+            </div>
+            
+            <!-- 멤버타입 -->
+            <div class="int_role">
+           		<span>유저</span>
+                <input type="radio" name="role" value="user">
+                <span>아티스트</span>
+                <input type="radio" name="role" value="artist">
             </div>
             
             <input type="submit" value="가입하기">
+            
+            
         </form>
     </section>
 </body>

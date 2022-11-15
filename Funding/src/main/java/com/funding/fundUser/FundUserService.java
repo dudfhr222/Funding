@@ -22,6 +22,7 @@ public class FundUserService {
 		
 		fundUser.setUsername(vo.getUsername());
 		fundUser.setPassword(passwordEncoder.encode(vo.getPassword1()));
+		fundUser.setNickname(vo.getNickname());
 		fundUser.setEmail(vo.getEmail());
 		fundUser.setMobile(vo.getMobile());
 		fundUser.setRole("user");
@@ -29,6 +30,7 @@ public class FundUserService {
 		this.fundUserRepository.save(fundUser);
 	}
 	
+	// userName 으로 계정정보 찾기
 	public FundUser findByuserName(String username) {
 		Optional<FundUser> fundUser = fundUserRepository.findByusername(username);
 		return fundUser.get();

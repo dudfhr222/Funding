@@ -18,38 +18,46 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class RegisterController {
 
-	private FundUserService fundUserService;
-	private FundArtistService fundArtistService;
+	private final FundUserService fundUserService;
+	private final FundArtistService fundArtistService;
 	
 	// 회원가입 폼 요청
-	@GetMapping("/join")
+	@GetMapping("/register")
 	public String registerForm(RegisterValidation vo) {
 		
 		return "user/userCreateForm";
 	}
 	
 	// 회원가입 , 유저정보 저장
-	@PostMapping("/join")
+	@PostMapping("/register")
 	public String register(@Valid RegisterValidation vo, BindingResult bindingResult) {
 		
 		if(bindingResult.hasErrors()) {
-			return "userCreateForm";
+			return "user/userCreateForm";
 		}
 		
         if (!vo.getPassword1().equals(vo.getPassword2())) {
             bindingResult.reject("passwordInCorrect", 
                     "2개의 패스워드가 일치하지 않습니다.");
-            return "signup_form";
+            return "user/userCreateForm";
         }
 		
-		
+//		try {
+//			this.fundUserService.register(vo);
+//			return "main/home";
+//		}catch(Exception err) {
+//			this.fundArtistService.register(vo);
+//			return "main/home";
+//		}
+        
+        
 		if(vo.getRole().equals("user")) {
 			this.fundUserService.register(vo);
 		}else if(vo.getRole().equals("artist")){
 			this.fundArtistService.register(vo);
 		}
 		
+		return "main/home";
 		
-		return "home";
 	}
 }

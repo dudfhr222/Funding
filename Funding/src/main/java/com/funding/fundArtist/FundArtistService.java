@@ -20,9 +20,11 @@ public class FundArtistService {
 		
 		fundArtist.setUsername(vo.getUsername());
 		fundArtist.setPassword(passwordEncoder.encode(vo.getPassword1()));
+		fundArtist.setNickname(vo.getNickname());
 		fundArtist.setEmail(vo.getEmail());
 		fundArtist.setMobile(vo.getMobile());
 		fundArtist.setRole("artist");
+		fundArtist.setLikeCount(0);
 		
 		this.fundArtistRepository.save(fundArtist);
 	}
