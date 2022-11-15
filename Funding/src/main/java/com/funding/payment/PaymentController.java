@@ -35,7 +35,7 @@ public class PaymentController {
 
     @RequestMapping("/pay/index")
     private String in() {
-    	return "/pay/index";
+    	return "/pay/tossPay";
     }
     
     @PostConstruct
