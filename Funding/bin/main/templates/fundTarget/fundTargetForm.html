@@ -1,0 +1,16 @@
+<div>
+	<form th:object="${targetForm}">
+		<div>카테고리</div>
+		<select th:name="categorie">
+			<option th:each="cate : ${cList}" th:value="${cate.id}" th:text="${cate.categoryName}"></option>
+		</select>
+		<div>제목</div>
+		<input type="text" th:field="*{subject}" autocomplete="off">
+		<div>내용</div>
+		<input type="text" th:field="*{content}" autocomplete="off">
+		<div>장소</div>
+		<input type="text" th:field="*{place}" autocomplete="off">
+		<button type="submit">만들기</button>
+	</form>
+
+</div>

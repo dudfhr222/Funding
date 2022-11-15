@@ -1,5 +1,7 @@
 package com.funding.FundCategorie;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
@@ -16,6 +18,14 @@ public class CategorieService {
 		cate.setCategoryName(name);
 		
 		categorieRepository.save(cate);
+	}
+	
+	
+	//카테고리 목록 불러오기
+	public List<Categorie> findAll(){
+		List<Categorie> cList = categorieRepository.findAll();
+		
+		return cList;
 	}
 	
 }
