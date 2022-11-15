@@ -33,7 +33,7 @@ public class PaymentController {
     private final ObjectMapper objectMapper = new ObjectMapper();
     private final PatmentService patmentService;
 
-    @RequestMapping("/pay/index")
+    @RequestMapping("/pay/tossPay")
     private String in() {
     	return "/pay/tossPay";
     }
@@ -72,7 +72,7 @@ public class PaymentController {
 
         ResponseEntity<JsonNode> responseEntity = restTemplate.postForEntity(
                 "https://api.tosspayments.com/v1/payments/" + paymentKey, request, JsonNode.class);
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+request+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        //System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+request+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
         if (responseEntity.getStatusCode() == HttpStatus.OK) {
             JsonNode successNode = responseEntity.getBody();
             log.info(successNode.toString());

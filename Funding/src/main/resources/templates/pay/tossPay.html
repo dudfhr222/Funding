@@ -17,10 +17,11 @@
     <div><label><input type="radio" name="method" value="카드" checked/>신용카드</label></div>
     <div><label><input type="radio" name="method" value="휴대폰"/>휴대폰</label></div>
     <div><label><input type="radio" name="method" value="문화상품권"/>상품권</label></div>
+    <div><label><input type="radio" name="method" value="가상계좌"/>계좌</label></div>
     <p>----------------------</p>
     <button id="payment-button">결제하기</button>
 </section>
-<script src="https://js.tosspayments.com/v1/payment"></script>
+<script src="https://js.tosspayments.com/v1"></script>
 <script>
     var tossPayments = TossPayments("test_ck_OALnQvDd2VJjgjj4daVMj7X41mNW");
     var button = document.getElementById("payment-button");
