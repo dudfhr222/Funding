@@ -1,4 +1,4 @@
-package com.funding.index;
+package com.funding.user;
 
 import javax.validation.Valid;
 
@@ -6,12 +6,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.funding.FundArtist.FundArtistService;
-import com.funding.FundUser.FundUserService;
+import com.funding.fundArtist.FundArtistService;
+import com.funding.fundUser.FundUserService;
 
 import lombok.RequiredArgsConstructor;
 
+@RequestMapping("/user")
 @Controller
 @RequiredArgsConstructor
 public class RegisterController {
@@ -23,7 +25,7 @@ public class RegisterController {
 	@GetMapping("/register")
 	public String registerForm(RegisterValidation vo) {
 		
-		return "userCreateForm";
+		return "user/userCreateForm";
 	}
 	
 	// 회원가입 , 유저정보 저장

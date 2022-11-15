@@ -1,9 +1,9 @@
-package com.funding.FundArtist;
+package com.funding.fundArtist;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.funding.index.RegisterValidation;
+import com.funding.user.RegisterValidation;
 
 import lombok.RequiredArgsConstructor;
 

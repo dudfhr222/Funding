@@ -1,4 +1,4 @@
-package com.funding.index;
+package com.funding.user;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;

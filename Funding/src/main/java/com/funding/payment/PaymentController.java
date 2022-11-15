@@ -33,7 +33,7 @@ public class PaymentController {
     private final ObjectMapper objectMapper = new ObjectMapper();
     private final PatmentService patmentService;
 
-    @RequestMapping("/pay/index")
+    @RequestMapping("/index")
     private String in() {
     	return "/pay/index";
     }
@@ -54,7 +54,7 @@ public class PaymentController {
     private final String SECRET_KEY = "test_sk_JQbgMGZzorzl7aMN4D3l5E1em4dK";
 
     //결제성공
-    @RequestMapping("/pay/success")
+    @RequestMapping("/success")
     public String confirmPayment(
             @RequestParam String paymentKey, @RequestParam String orderId, @RequestParam int amount,
             Model model) throws Exception {
@@ -91,7 +91,7 @@ public class PaymentController {
     }
 
     //결제실패
-    @RequestMapping("/pay/fail")
+    @RequestMapping("/fail")
     public String failPayment(@RequestParam String message, @RequestParam String code, Model model) {
         model.addAttribute("message", message);
         model.addAttribute("code", code);
