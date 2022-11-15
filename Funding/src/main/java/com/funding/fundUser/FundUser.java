@@ -1,6 +1,4 @@
-package com.funding.FundUser;
-
-import java.util.List;
+package com.funding.fundUser;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.funding.FundArtist.FundArtistService;
-import com.funding.FundUser.FundUserService;
+import com.funding.fundArtist.FundArtistService;
+import com.funding.fundUser.FundUserService;
 
 import lombok.RequiredArgsConstructor;
 
+@RequestMapping("/user")
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/user")
 public class RegisterController {
 
 	private FundUserService fundUserService;
