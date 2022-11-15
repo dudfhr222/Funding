@@ -9,14 +9,14 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 20px 0;
+    padding: 30px 0;
 }
 
 /* 로고 */
 .logo {}
 
 .logo a {
-    font-size: 30px;
+    font-size: 35px;
     font-weight: bold;
 }
 
@@ -34,6 +34,7 @@ header {
 }
 
 .menu ul li a {
+    font-size: 17px;
     font-weight: bold;
 }
 
@@ -58,5 +59,6 @@ header {
 }
 
 .login ul li a {
+    font-size: 17px;
     font-weight: bold;
 }
